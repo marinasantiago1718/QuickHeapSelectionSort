@@ -13,3 +13,15 @@ public class SelectionSort {
         }
     }
 }
+
+
+
+
+//Joao Miguel Cavalcante Drumond Silva(2410420)
+//Análise de Tempo
+
+//Metodo Sort
+//A complexidade de tempo do Sort é Θ(N2) (N ao quadrado) devido aos dois loops aninhados que realizam um número quadrático de comparações em relação ao tamanho do array N.
+
+//Análise de espaço
+//As únicas variáveis alocadas dentro da função sort são de tamanho constante, i (int), minValueIndex (int), j (int), aux , portanto possui complexidade de  espaço (Θ(1))

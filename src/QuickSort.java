@@ -23,6 +23,7 @@ public class QuickSort {
                 double store = array[i];
                 array[i] = array[indice];
                 array[indice] = store;
+
                 indice++;
             }
         }

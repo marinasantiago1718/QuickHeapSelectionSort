@@ -5,32 +5,34 @@ public class QuickSort {
         this.array = array;
     }
 
-    public void sort(int inicio, int fim){
-        if (inicio < fim) {
-            int posPivo = divideArray(array, inicio, fim);
-            sort(inicio, posPivo - 1);
-            sort(posPivo + 1, fim);
+    public void sort(int start, int end){
+        if (start < end) {
+            int posPivot = divideArray(array, start, end);
+            sort(start, posPivot - 1);
+            sort(posPivot + 1, end);
         }
     }
 
-    public int divideArray(double[] array, int inicio, int fim){
+    public int divideArray(double[] array, int start, int end){
 
-        double pivo = array[fim];
-        int indice = inicio;
-        for(int i = inicio; i<fim; i++){
-            if(array[i] < pivo){
+        double pivot = array[end];
+        int index = start;
+        for(int i = start; i< end; i++){
+            if(array[i] < pivot){
                 double store = array[i];
-                array[i] = array[indice];
-                array[indice] = store;
-                indice++;
+                array[i] = array[index];
+                array[index] = store;
+
+                index++;
             }
         }
 
-        double store = array[indice];
-        array[indice] = pivo;
-        array[fim] = store;
+        double store = array[index];
+        array[index] = pivot;
+        array[end] = store;
 
-        return indice;
+        return index;
+
     }
 
     @Override
@@ -46,7 +48,9 @@ public class QuickSort {
     }
 }
 
-/* Complexidade de Tempo
+/* Tales Alcântara Pimentel - 2417145, implementei o selectionSort e analisei o quickSort.
+ * 
+ * Complexidade de Tempo
  * - Melhor caso: T(n) = 2T(n/2) + n => Θ(nlogn), segundo caso mestre.
  *  Ocorre quando o pivô é a mediana, dividindo o array igualmente.
  * 
@@ -79,6 +83,5 @@ public class QuickSort {
  *  - Melhor caso: Θ(log n), pois a árvore é balanceada (altura log n).
  * 
  *  - Caso médio: Θ(log n), pois a profundidade esperada da pilha é log n.
- * 
 */
 
